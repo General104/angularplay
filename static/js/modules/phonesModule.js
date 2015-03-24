@@ -1,7 +1,17 @@
 var module
-var moduleName = 'phoneCatalogueApp'
-var moduleParams = ['ngRoute', 'phonecatControllers']
-var moduleConfig = ['$routeProvider']
+var moduleName = 'phonesModule'
+
+var moduleParams = [
+	'ngRoute', 
+	'phonecatAnimations', 
+	'phonecatServices', 
+	'phonecatControllers',
+	'phonecatFilters'
+]
+
+var moduleConfig = [
+	'$routeProvider'
+]
 
 var configAction = function($routeProvider) {
 	$routeProvider.
@@ -18,7 +28,11 @@ var configAction = function($routeProvider) {
 			});
 }
 
+angular.module('phonecatServices', ['ngResource']);
 angular.module('phonecatControllers', [])
+angular.module('phonecatFilters', [])
+angular.module('phonecatAnimations', ['ngAnimate']);
+
 module = angular.module(moduleName, moduleParams)
 
 moduleConfig.push(configAction)

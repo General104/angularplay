@@ -1,16 +1,13 @@
 
 var phonecatControllers = angular.module('phonecatControllers');
-var injections = ['$scope', '$http'];
+var injections = ['$scope', '$http', 'Phone'];
 
-injections.push(function ($scope, $http) {
+injections.push(function ($scope, $http, Phone) {
 
 	$scope.query = '';
 	$scope.orderProp = 'age';
 
-	$http.get('data/phones.json').success(function(data) {
-		$scope.phones = data;
-	});
-
+	$scope.phones = Phone.query();
 });
 
 phonecatControllers.controller('phoneCatalogueController', injections);

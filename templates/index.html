@@ -1,21 +1,32 @@
 <!doctype html>
-<html lang="en" ng-app="phoneCatalogueApp">
+<html lang="en" ng-app="phonesModule">
 	<head>
 		<meta charset="utf-8">
 		<title>Phone Store</title>
 
-		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/static/css/lib/bootstrap.min.css" rel="stylesheet">
 		<link href="/static/css/app.css" rel="stylesheet">
+		<link href="/static/css/animation.css" rel="stylesheet">
 
+		<script src="/static/js/lib/jquery.min.js"></script>
 		<script src="/static/js/lib/angular.min.js"></script>
 		<script src="/static/js/lib/angular-route.min.js"></script>
+		<script src="/static/js/lib/angular-resource.min.js"></script>
+		<script src="/static/js/lib/angular-animate.min.js"></script>
 		
-		<script src="/static/js/modules/phoneCatalogue.js"></script>
+		<script src="/static/js/modules/phonesModule.js"></script>
+
+		<script src="/static/js/services/phoneDetail.js"></script>
+
 		<script src="/static/js/controllers/phoneCatalogue.js"></script>
-		<script src="/static/js/controllers/phoneDetail.js"></script>		
+		<script src="/static/js/controllers/phoneDetail.js"></script>
+
+		<script src="/static/js/filters/phoneDetail.js"></script>
+
+		<script src="/static/js/animations/phoneDetail.js"></script>
 		
 	</head>
-	<body>	
-		<div ng-view></div>
+	<body class="view-container">	
+		<div ng-view class="view-frame"></div>
 	</body>	
 </html>
